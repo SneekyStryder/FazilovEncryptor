@@ -36,9 +36,21 @@ public class Encryptor {
         for (int i = 0; i < dump.length; i++) {
             characters.add(dump[i]);
         }
+        if (characters.size() < numRows * numCols) {
+            while (characters.size() != numRows * numCols) {
+                characters.add("A");
+            }
+        }
 
         String[][] list = new String[numRows][numCols];
-        for (int i = 0; i < )
+        for (int i = 0; i < list.length; i++) {
+            for (int j = 0; j < list[0].length; j++) {
+                list[i][j] = characters.get(0);
+                characters.remove(0);
+            }
+        }
+
+        letterBlock = list;
     }
 
     /** Extracts encrypted string from letterBlock in column-major order.
@@ -48,7 +60,7 @@ public class Encryptor {
      *   @return the encrypted string from letterBlock
      */
     public String encryptBlock() {
-        /* to be implemented in part (b) */
+        return "l";
     }
 
     /** Encrypts a message.
@@ -58,7 +70,7 @@ public class Encryptor {
      *  @return the encrypted message; if message is the empty string, returns the empty string
      */
     public String encryptMessage(String message) {
-        /* to be implemented in part (c) */
+        return "l";
     }
 
     /**  Decrypts an encrypted message. All filler 'A's that may have been
@@ -84,6 +96,6 @@ public class Encryptor {
      *         similar to how encryptBlock was used)
      */
     public String decryptMessage(String encryptedMessage) {
-        /* to be implemented in part (d) */
+        return "l";
     }
 }
