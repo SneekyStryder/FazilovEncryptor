@@ -4,6 +4,7 @@
     <list default="true" id="0057c1a4-6c04-4c87-a8f0-38616e7ef18f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Encryptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Encryptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EncryptorTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EncryptorTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

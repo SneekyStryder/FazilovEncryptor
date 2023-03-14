@@ -60,7 +60,13 @@ public class Encryptor {
      *   @return the encrypted string from letterBlock
      */
     public String encryptBlock() {
-        return "l";
+        String encrypted = "";
+         for (int i = 0; i < letterBlock[0].length; i++) {
+             for (int j = 0; j < letterBlock.length; j++) {
+                 encrypted += letterBlock[j][i];
+             }
+         }
+         return encrypted;
     }
 
     /** Encrypts a message.
@@ -70,7 +76,19 @@ public class Encryptor {
      *  @return the encrypted message; if message is the empty string, returns the empty string
      */
     public String encryptMessage(String message) {
-        return "l";
+        if (message.equals("")) {
+            return message;
+        }
+        else {
+            int add = 0;
+            while (message.length() > (numRows * numCols) || message.length() % ((numCols * numCols) + add) != 0) {
+                add++;
+            }
+            if (message.length() < (numCols * numRows)) {
+                // fill it with only one block
+            }
+            int divide = message.length() / ((numCols * numRows) + add);
+        }
     }
 
     /**  Decrypts an encrypted message. All filler 'A's that may have been
