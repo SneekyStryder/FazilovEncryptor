@@ -76,19 +76,17 @@ public class Encryptor {
      *  @return the encrypted message; if message is the empty string, returns the empty string
      */
     public String encryptMessage(String message) {
-        if (message.equals("")) {
-            return message;
-        }
-        else {
-            int add = 0;
-            while (message.length() > (numRows * numCols) || message.length() % ((numCols * numCols) + add) != 0) {
-                add++;
+        String encryptedMessage = "";
+        int size = numCols * numRows;
+        while (message.length() > 0) {
+            if (size > message.length()) {
+                size = message.length();
             }
-            if (message.length() < (numCols * numRows)) {
-                // fill it with only one block
-            }
-            int divide = message.length() / ((numCols * numRows) + add);
+            fillBlock(message);
+            encryptedMessage += encryptBlock();
+            message = message.substring((size));
         }
+        return encryptedMessage;
     }
 
     /**  Decrypts an encrypted message. All filler 'A's that may have been
@@ -114,6 +112,10 @@ public class Encryptor {
      *         similar to how encryptBlock was used)
      */
     public String decryptMessage(String encryptedMessage) {
-        return "l";
+        String decryptedMessage = "";
+        int size = numCols * numRows;
+        while (encryptedMessage.length() > 0) {
+            String chunkToDecrypt
+        }
     }
 }
