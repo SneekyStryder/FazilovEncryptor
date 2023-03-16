@@ -115,7 +115,36 @@ public class Encryptor {
         String decryptedMessage = "";
         int size = numCols * numRows;
         while (encryptedMessage.length() > 0) {
-            String chunkToDecrypt
+            String chunkToDecrypt = encryptedMessage.substring(0, size);
+            decryptedMessage += decryptBlock(chunkToDecrypt);
+            encryptedMessage = encryptedMessage.substring((size));
         }
+        String lastChar = decryptedMessage.substring((decryptedMessage.length() - 1));
+        while (lastChar.equals("A")) {
+            decryptedMessage = decryptedMessage.substring(0, decryptedMessage.length() - 1);
+            lastChar = decryptedMessage.substring(decryptedMessage.length() - 1);
+        }
+
+        return decryptedMessage;
+    }
+
+    private String decryptBlock(String blockStr) {
+        String[][] temp2D = new String[numRows][numCols];
+        int pos = 0;
+        for (int col = 0; col < temp2D[0].length; col++) {
+            for (int row = 0; row < temp2D.length; row++) {
+                temp2D[row][col] = blockStr.substring(pos, pos + 1);
+                pos++;
+            }
+        }
+
+        String decryptedBlock = "";
+        for (int row = 0; row < temp2D.length; row++) {
+            for (int col = 0; col < temp2D[0].length; col++) {
+                String element = temp2D[row][col];
+                decryptedBlock += element;
+            }
+        }
+        return decryptedBlock;
     }
 }
